@@ -1,0 +1,11 @@
+# Netlify-configuratie voor de Vite + React SPA.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA-fallback: alle routes naar index.html zodat client-side routing
+# (react-router) ook werkt bij direct laden van /overzicht, /dashboard, etc.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
