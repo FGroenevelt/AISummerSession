@@ -62,9 +62,11 @@ export default function Home() {
       </div>
 
       {!isSupabaseConfigured && (
-        <div className="mb-6 rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-          ⚠️ Supabase is nog niet geconfigureerd. Vul <code>.env</code> in (zie{' '}
-          <code>.env.example</code>) en herstart de dev-server.
+        <div className="mb-6 rounded-xl border border-kplus-blue/30 bg-kplus-blue/5 px-4 py-3 text-sm text-kplus-ink">
+          🧪 <strong>Lokale testmodus</strong> — inzendingen en stemmen worden
+          opgeslagen in een SQLite-database in je eigen browser. Vul later{' '}
+          <code>.env</code> in (zie <code>.env.example</code>) om over te
+          schakelen naar Supabase.
         </div>
       )}
 

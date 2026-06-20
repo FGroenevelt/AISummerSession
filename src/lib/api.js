@@ -1,8 +1,16 @@
-import { supabase } from './supabase'
+import { supabase, isSupabaseConfigured } from './supabase'
 import { getVoterToken, markVoted } from './voter'
+import * as local from './localdb'
+
+// Schakellogica: zonder Supabase-config gebruiken we de lokale SQLite-test-
+// database (sql.js in de browser). Met config praat de tool met Supabase.
+const useLocal = !isSupabaseConfigured
 
 // Eén idee indienen: maak (of hergebruik) een deelnemer en schrijf het idee weg.
-export async function submitIdea({ name, email, title, problem, solution }) {
+export async function submitIdea(input) {
+  if (useLocal) return local.submitIdea(input)
+
+  const { name, email, title, problem, solution } = input
   const { data: participant, error: pErr } = await supabase
     .from('participants')
     .insert({ name: name.trim(), email: email.trim() })
@@ -28,6 +36,8 @@ export async function submitIdea({ name, email, title, problem, solution }) {
 // Alle ideeën met indiener-naam en stemaantal. Sorteren doen we client-side
 // zodat schakelen tussen 'meeste stemmen' en 'nieuwste' geen extra call kost.
 export async function fetchIdeas() {
+  if (useLocal) return local.fetchIdeas()
+
   const { data: ideas, error: iErr } = await supabase
     .from('ideas')
     .select('id, title, problem, solution, created_at, participants(name)')
@@ -55,6 +65,8 @@ export async function fetchIdeas() {
 // Eén stem uitbrengen. Een unieke constraint (idea_id, voter_token) in de DB
 // weigert dubbel stemmen vanaf hetzelfde device (foutcode 23505).
 export async function castVote(ideaId) {
+  if (useLocal) return local.castVote(ideaId)
+
   const voter_token = getVoterToken()
   const { error } = await supabase
     .from('votes')
@@ -73,6 +85,8 @@ export async function castVote(ideaId) {
 
 // Kerncijfers voor het dashboard, afgeleid van dezelfde ideeën-data.
 export async function fetchStats() {
+  if (useLocal) return local.fetchStats()
+
   const ideas = await fetchIdeas()
   const { count: voteCount } = await supabase
     .from('votes')

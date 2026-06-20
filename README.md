@@ -19,6 +19,26 @@ prioritering is input voor onderdeel 2 (vibe-coden) van de sessie.
 - ✅ KplusV-huisstijl (logo + kleuren) centraal in `tailwind.config.js`
 - ✅ Responsive (laptop + telefoon), Nederlandstalig
 - ✅ Supabase-schema, RLS-policies, e-mail Edge Function + trigger als code
+- ✅ Lokale testmodus met SQLite-in-de-browser (sql.js) — testen zonder Supabase
+
+---
+
+## Direct testen zonder Supabase (lokale testmodus)
+
+Zolang er nog geen `.env` is, draait de tool automatisch in **lokale
+testmodus**: inzendingen en stemmen worden opgeslagen in een echte SQLite-
+database (sql.js) die volledig in je browser draait en bewaard blijft in
+`localStorage`. Zo kun je het hele proces (indienen → overzicht → stemmen →
+dashboard) testen zonder iets op te zetten.
+
+```bash
+npm install
+npm run dev      # of dubbelklik de snelkoppeling op je bureaublad
+```
+
+> Wil je de testdata wissen? Leeg in de browser de `localStorage`-sleutel
+> `kplusv_sqlite_db` (of gebruik een incognitovenster). Zodra je een geldige
+> `.env` invult, schakelt de tool automatisch over naar Supabase.
 
 ---
 
