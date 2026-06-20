@@ -20,7 +20,7 @@ export default function Layout({ children }) {
               className="h-10 w-10 rounded-lg object-cover"
             />
             <span className="hidden text-lg font-bold text-kplus-ink sm:block">
-              Ideeën- &amp; stemtool
+              KplusV AI Summer Session
             </span>
           </Link>
           <nav className="flex items-center gap-1">
@@ -41,7 +41,7 @@ export default function Layout({ children }) {
 
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-4 py-5 text-sm text-slate-500 sm:flex-row">
-          <span>KplusV · AI-sessie — huiswerk onderdeel 2 (vibe-coden)</span>
+          <span>KplusV - AI sessie</span>
           <span className="flex gap-1">
             <span
               className="h-3 w-3 rounded-full"

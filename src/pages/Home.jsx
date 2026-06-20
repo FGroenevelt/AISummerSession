@@ -52,12 +52,12 @@ export default function Home() {
     <div className="mx-auto max-w-2xl">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-extrabold text-kplus-ink sm:text-4xl">
-          Dien je idee in
+          Wat ga jij met AI oplossen?
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-slate-600">
           Welke tool, dashboard of automatisering zou jij willen hebben? Dien je
-          idee in voor de AI-sessie. Tijdens onderdeel 2 (vibe-coden) bouwen we
-          één van de meest gekozen ideeën daadwerkelijk.
+          idee in voor de AI-sessie. Tijdens de sessie gaan we aan de slag met de
+          meest gekozen ideeën.
         </p>
       </div>
 
@@ -81,7 +81,7 @@ export default function Home() {
           />
         </Field>
 
-        <Field label="E-mailadres" error={errors.email} hint="Voor de bevestigingsmail.">
+        <Field label="E-mailadres" error={errors.email}>
           <input
             className="input"
             type="email"
