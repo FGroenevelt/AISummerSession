@@ -97,16 +97,46 @@ stem.
    `<PROJECT_REF>` en `<ANON_KEY>`, en voer het uit in de Supabase SQL Editor.
    Vanaf nu krijgt elke indiener automatisch een bevestigingsmail.
 
-### 4. Deploy naar Netlify
+### 4. Deploy — kies één hostingoptie (beide gratis)
 
-1. Zet deze map in een Git-repository en push naar GitHub (of gebruik
-   `netlify deploy`).
+#### Optie A — GitHub Pages (alles in GitHub, aanbevolen)
+
+De repo bevat al een deploy-workflow
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) die bij elke
+push naar `main` automatisch bouwt en publiceert.
+
+1. Maak op <https://github.com> een **nieuwe repository** (bijv.
+   `kplusv-ideeentool`) en push deze map ernaartoe:
+   ```bash
+   git remote add origin https://github.com/<jouw-gebruikersnaam>/kplusv-ideeentool.git
+   git push -u origin main
+   ```
+2. **Settings → Secrets and variables → Actions → New repository secret**:
+   voeg twee secrets toe (dezelfde waarden als in je `.env`):
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+
+   > De anon-key is bedoeld om publiek te zijn (beschermd door RLS), dus dit is
+   > veilig. Deel nooit je `service_role`-key.
+3. **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+4. Ga naar tabblad **Actions**, draai de workflow (of push een kleine wijziging).
+   Na ±1 minuut staat je site live op
+   `https://<jouw-gebruikersnaam>.github.io/<repo-naam>/`.
+5. Test de link end-to-end en deel hem enkele dagen vóór de sessie.
+
+> Let op: GitHub Pages serveert op een subpad (`/<repo-naam>/`). De build is daar
+> al op ingericht (basepad + SPA-fallback). Gebruik je een **eigen domein** of
+> noem je de repo `<gebruikersnaam>.github.io`, dan serveert hij vanaf `/` —
+> werkt ook, geen aanpassing nodig.
+
+#### Optie B — Netlify (alternatief)
+
+1. Push deze map naar GitHub (of gebruik `netlify deploy`).
 2. Maak een site op <https://netlify.com>, koppel de repo. Build-instellingen
    staan al in [`netlify.toml`](netlify.toml) (`npm run build` → `dist`).
 3. **Site settings → Environment variables**: voeg `VITE_SUPABASE_URL` en
-   `VITE_SUPABASE_ANON_KEY` toe (dezelfde waarden als in je `.env`).
-4. Deploy. Test de live link end-to-end met een paar testinzendingen.
-5. Deel de link enkele dagen vóór de sessie, met een duidelijke deadline.
+   `VITE_SUPABASE_ANON_KEY` toe.
+4. Deploy. Test de live link end-to-end en deel hem vóór de sessie.
 
 ---
 

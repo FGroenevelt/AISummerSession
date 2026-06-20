@@ -15,7 +15,7 @@ export default function Layout({ children }) {
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="/logo-kplusv.webp"
+              src={`${import.meta.env.BASE_URL}logo-kplusv.webp`}
               alt="KplusV"
               className="h-10 w-10 rounded-lg object-cover"
             />
