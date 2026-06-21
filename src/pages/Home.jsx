@@ -55,9 +55,9 @@ export default function Home() {
           Wat ga jij met AI oplossen?
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-slate-600">
-          Welke tool, dashboard of automatisering zou jij willen hebben? Dien je
-          idee in voor de AI-sessie. Tijdens de sessie gaan we aan de slag met de
-          meest gekozen ideeën.
+          Welke tool, dashboard of automatisering zou jij willen ontwikkelen?
+          Dien je idee in voor de AI-sessie. Tijdens de sessie gaan we aan de slag
+          met de meest gekozen ideeën.
         </p>
       </div>
 

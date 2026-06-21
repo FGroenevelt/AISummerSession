@@ -24,9 +24,6 @@ export default function Dashboard() {
     <div>
       <div className="mb-6">
         <h1 className="text-3xl font-extrabold text-kplus-ink">Dashboard</h1>
-        <p className="mt-2 text-slate-600">
-          Hoe loopt de inzending en welke ideeën leven het meest?
-        </p>
       </div>
 
       {error && (
