@@ -72,7 +72,7 @@
   /* Outro-kaart */
   .outro{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.5em; z-index:7; text-align:center; padding:0 6%;}
   .outro img{width:min(18vh,180px); border-radius:16px; box-shadow:0 24px 70px rgba(0,0,0,.5);}
-  .outro .t1{font-weight:900; font-size:clamp(24px,4.8vw,62px); max-width:18ch; line-height:1.07;}
+  .outro .t1{font-weight:900; font-size:clamp(23px,4.4vw,56px); max-width:22ch; line-height:1.08;}
   .outro .t2{font-weight:700; font-size:clamp(16px,2.6vw,30px); color:var(--lavender);}
   .outro .url{margin-top:.3em; font-weight:700; font-size:clamp(14px,2.1vw,24px);
     background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3); padding:.45em 1em; border-radius:999px;}
@@ -99,32 +99,45 @@
 </div>
 
 <script>
-const ACCENT = new Set(["denkwerk","scherpte","vakmanschap","impact","expertise","idee","jij","jóuw","tijd","bouw"]);
+const ACCENT = new Set(["vakmanschap","kennis","netwerk","sneller","inhoud","jij","jóuw","oplossing"]);
 
-// Volledige script (18 beats), 1-op-1. type: 'logo' | 'line' | 'hook' | 'cta' | 'outro'
+// Volledig script, 1-op-1 (geen voice-over; tekst-in-beeld op muziek).
+// type: 'logo' | 'line' | 'cta' | 'outro'
 const beats = [
-  { type:'logo', text:"Dit is de KplusV AI Summer Session.", dur:2900 },
-  { type:'line', text:"13 augustus —", dur:1300 },
-  { type:'line', text:"dé dag dat AI jouw werk verandert.", dur:2200 },
+  // Intro
+  { type:'logo', text:"Op 13 augustus organiseren we de KplusV AI Summer Session.", dur:3400 },
+  { type:'line', small:true, text:"Samen ontdekken we hoe AI jouw werk makkelijker maakt.", dur:2800 },
 
-  { type:'line', text:"Adviseren is denkwerk, scherpte, vakmanschap.", dur:2300 },
-  { type:'line', small:true, text:"Maar het routinewerk eromheen?", dur:1900 },
-  { type:'line', text:"Dat vreet tijd.", dur:1500 },
+  // Herkenning
+  { type:'line', small:true, text:"Als adviseur werk je aan adviezen, evaluaties en verkenningen.", dur:3000 },
+  { type:'line', small:true, text:"Jouw kracht zit in kennis, netwerk en vakmanschap.", dur:2700 },
+  { type:'line', text:"Dat maakt het verschil — en dat blijft zo.", dur:2400 },
+  { type:'line', small:true, text:"Maar schrijven, onderzoeken, en repetitief werk?", dur:2400 },
+  { type:'line', text:"Dat kan vaak sneller. Precies daar helpt AI.", dur:2500 },
 
-  { type:'line', chip:"Bidmanagement", small:true, text:"Een uitvraag uitpluizen voor een bid?", dur:2100 },
-  { type:'hook', text:"Precies dát lost AI op.", dur:1800 },
-  { type:'line', chip:"Interviews", small:true, text:"Interviews omzetten in een gespreksverslag?", dur:2200 },
-  { type:'hook', text:"Precies dát lost AI op.", dur:1700 },
-  { type:'line', chip:"Financieel DD", small:true, text:"Een financieel model met scenario's bouwen?", dur:2200 },
-  { type:'hook', text:"Precies dát lost AI op.", dur:1800 },
+  // Voorbeeld 1: Bidmanagement
+  { type:'line', chip:"Bidmanagement", small:true, text:"Doe razendsnel onderzoek naar een uitvraag.", dur:2500 },
+  { type:'line', small:true, text:"Laat AI een eerste aanzet maken voor je vragenlijst.", dur:2800 },
 
-  { type:'line', text:"Minder routine. Meer impact.", dur:2000 },
-  { type:'line', small:true, text:"Jouw expertise, versterkt door AI.", dur:2200 },
+  // Voorbeeld 2: Interviews
+  { type:'line', chip:"Interviews", small:true, text:"Zet je Teams-interviews automatisch om in een gespreksverslag.", dur:3000 },
+  { type:'line', small:true, text:"Laat AI alles samenvatten — met een eerste analyse erbij.", dur:2900 },
 
-  { type:'line', text:"En nu ben jij aan zet.", dur:1800 },
-  { type:'line', small:true, text:"Welke tool, welk dashboard, welke automatisering bouw jij?", dur:2500 },
-  { type:'cta', text:"Dien je idee in.", dur:2000 },
-  { type:'outro', text:"Op 13 augustus bouwen we het. Samen.", dur:4200 },
+  // Voorbeeld 3: Financieel DD
+  { type:'line', chip:"Financieel DD", small:true, text:"Geen uren meer bouwen aan een financieel model.", dur:2600 },
+  { type:'line', small:true, text:"Geef de parameters mee, AI bouwt de scenario's.", dur:2600 },
+
+  // Boodschap
+  { type:'line', small:true, text:"Van businesscase tot beleidsverkenning:", dur:2200 },
+  { type:'line', small:true, text:"minder routinewerk, meer tijd voor inhoud.", dur:2400 },
+  { type:'line', text:"AI vervangt jouw vakmanschap niet —", dur:2300 },
+  { type:'line', text:"het neemt het werk eromheen over.", dur:2300 },
+
+  // Oproep
+  { type:'line', text:"En nu ben jij aan zet.", dur:1900 },
+  { type:'line', small:true, text:"Welke tool, welk dashboard, welke automatisering zou jij willen ontwikkelen?", dur:3300 },
+  { type:'cta', text:"Dien je idee in.", dur:2100 },
+  { type:'outro', text:"Misschien bouwen we op 13 augustus wel jóuw oplossing.", dur:4200 },
 ];
 
 // ── Deterministische, seekbare tijdlijn ─────────────────────────────
@@ -170,9 +183,7 @@ function buildBeat(b){
   } else if(b.type==='outro'){
     const o=el('div'); o.className='outro';
     const img=el('img'); img.src='/logo-kplusv.webp'; o.appendChild(img); ns.push({el:img,delay:0});
-    const t1=el('div'); t1.className='t1'; t1.textContent=b.text; o.appendChild(t1); ns.push({el:t1,delay:160});
-    const t2=el('div'); t2.className='t2'; t2.textContent='Dien je idee in op'; o.appendChild(t2); ns.push({el:t2,delay:370});
-    const u=el('div'); u.className='url'; u.textContent='fgroenevelt.github.io/AISummerSession'; o.appendChild(u); ns.push({el:u,delay:540});
+    const t1=el('div'); t1.className='t1'; t1.textContent=b.text; o.appendChild(t1); ns.push({el:t1,delay:200});
     center.appendChild(o);
   } else {
     let base=20;

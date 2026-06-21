@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <figure className="mb-3">
+      <div className="mb-8">
         <video
           className="w-full rounded-xl2 shadow-card"
           src={`${import.meta.env.BASE_URL}intro-video.mp4`}
@@ -61,10 +61,7 @@ export default function Home() {
           playsInline
           controls
         />
-        <figcaption className="mt-2 text-center text-xs text-slate-400">
-          Muziek: “Inspired” — Kevin MacLeod (incompetech.com), CC BY 4.0
-        </figcaption>
-      </figure>
+      </div>
 
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-extrabold text-kplus-ink sm:text-4xl">

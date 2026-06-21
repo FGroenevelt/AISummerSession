@@ -1,29 +1,37 @@
-KplusV AI Summer Session — intro-video (v2: heroïsch, sneller, korter)
-Voice-over: ElevenLabs Daniel, vlot/dynamisch tempo. Doelduur ~50-55 sec.
-"AI" wordt Engels uitgesproken (naar de stem als "A.I."), op scherm als "AI".
+KplusV AI Summer Session — intro-video (definitief script, tekst-in-beeld op muziek)
+Geen voice-over. Outro zonder URL (we staan al op de site).
 
 — Intro —
-Dit is de KplusV AI Summer Session.
-13 augustus — dé dag dat AI jouw werk verandert.
+Op 13 augustus organiseren we de KplusV AI Summer Session.
+Samen ontdekken we hoe AI jouw werk makkelijker maakt.
 
 — Herkenning —
-Adviseren is denkwerk, scherpte, vakmanschap.
-Maar het routinewerk eromheen? Dat vreet tijd.
+Als adviseur werk je aan adviezen, evaluaties en verkenningen.
+Jouw kracht zit in kennis, netwerk en vakmanschap.
+Dat maakt het verschil — en dat blijft zo.
+Maar schrijven, onderzoeken, en repetitief werk?
+Dat kan vaak sneller. Precies daar helpt AI.
 
-— Voorbeelden (hook: "Precies dát lost AI op") —
-Een uitvraag uitpluizen voor een bid?
-Precies dát lost AI op.
-Interviews omzetten in een gespreksverslag?
-Precies dát lost AI op.
-Een financieel model met scenario's bouwen?
-Precies dát lost AI op.
+— Voorbeeld 1: Bidmanagement —
+Doe razendsnel onderzoek naar een uitvraag.
+Laat AI een eerste aanzet maken voor je vragenlijst.
+
+— Voorbeeld 2: Interviews —
+Zet je Teams-interviews automatisch om in een gespreksverslag.
+Laat AI alles samenvatten — met een eerste analyse erbij.
+
+— Voorbeeld 3: Financieel DD —
+Geen uren meer bouwen aan een financieel model.
+Geef de parameters mee, AI bouwt de scenario's.
 
 — Boodschap —
-Minder routine. Meer impact.
-Jouw expertise, versterkt door AI.
+Van businesscase tot beleidsverkenning:
+minder routinewerk, meer tijd voor inhoud.
+AI vervangt jouw vakmanschap niet —
+het neemt het werk eromheen over.
 
 — Oproep —
 En nu ben jij aan zet.
-Welke tool, welk dashboard, welke automatisering bouw jij?
+Welke tool, welk dashboard, welke automatisering zou jij willen ontwikkelen?
 Dien je idee in.
-Op 13 augustus bouwen we het. Samen.
+Misschien bouwen we op 13 augustus wel jóuw oplossing.
