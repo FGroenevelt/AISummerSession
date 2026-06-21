@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "title": "KplusV AI Summer Session — intro-video",
+    "version": "v2 heroïsch/sneller/korter",
+    "language": "nl",
+    "ai_pronunciation": "Engels (naar TTS als 'A.I.', op scherm 'AI')",
+    "voice_tempo": "vlot/dynamisch",
+    "timing_filled": true,
+    "note": "start/duration worden gevuld door generate_voiceover. 'label' = categorie-chip op scherm (niet ingesproken).",
+    "voice": "ElevenLabs Daniel (onwK4e9ZLuTAKqWW03F9), eleven_multilingual_v2",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.85,
+      "style": 0.45,
+      "use_speaker_boost": true,
+      "speed": 1.1
+    },
+    "total_duration_sec": 47.46
+  },
+  "beats": [
+    {
+      "id": 1,
+      "section": "intro",
+      "text": "Dit is de KplusV AI Summer Session.",
+      "start": 0.0,
+      "duration": 3.379
+    },
+    {
+      "id": 2,
+      "section": "intro",
+      "text": "13 augustus —",
+      "start": 3.913,
+      "duration": 1.265
+    },
+    {
+      "id": 3,
+      "section": "intro",
+      "text": "dé dag dat AI jouw werk verandert.",
+      "start": 5.364,
+      "duration": 2.717
+    },
+    {
+      "id": 4,
+      "section": "herkenning",
+      "text": "Adviseren is denkwerk, scherpte, vakmanschap.",
+      "start": 8.371,
+      "duration": 3.808
+    },
+    {
+      "id": 5,
+      "section": "herkenning",
+      "text": "Maar het routinewerk eromheen?",
+      "start": 12.643,
+      "duration": 1.614
+    },
+    {
+      "id": 6,
+      "section": "herkenning",
+      "text": "Dat vreet tijd.",
+      "start": 14.605,
+      "duration": 1.022
+    },
+    {
+      "id": 7,
+      "section": "voorbeeld_bidmanagement",
+      "label": "Bidmanagement",
+      "text": "Een uitvraag uitpluizen voor een bid?",
+      "start": 16.022,
+      "duration": 1.997
+    },
+    {
+      "id": 8,
+      "section": "voorbeeld_bidmanagement",
+      "hook": true,
+      "text": "Precies dát lost AI op.",
+      "start": 18.425,
+      "duration": 1.904
+    },
+    {
+      "id": 9,
+      "section": "voorbeeld_interviews",
+      "label": "Interviews",
+      "text": "Interviews omzetten in een gespreksverslag?",
+      "start": 20.875,
+      "duration": 2.264
+    },
+    {
+      "id": 10,
+      "section": "voorbeeld_interviews",
+      "hook": true,
+      "text": "Precies dát lost AI op.",
+      "start": 23.603,
+      "duration": 1.776
+    },
+    {
+      "id": 11,
+      "section": "voorbeeld_financieel_dd",
+      "label": "Financieel DD",
+      "text": "Een financieel model met scenario's bouwen?",
+      "start": 25.786,
+      "duration": 2.322
+    },
+    {
+      "id": 12,
+      "section": "voorbeeld_financieel_dd",
+      "hook": true,
+      "text": "Precies dát lost AI op.",
+      "start": 28.572,
+      "duration": 2.02
+    },
+    {
+      "id": 13,
+      "section": "boodschap",
+      "text": "Minder routine. Meer impact.",
+      "start": 30.94,
+      "duration": 2.125
+    },
+    {
+      "id": 14,
+      "section": "boodschap",
+      "text": "Jouw expertise, versterkt door AI.",
+      "start": 33.471,
+      "duration": 2.566
+    },
+    {
+      "id": 15,
+      "section": "oproep",
+      "text": "En nu ben jij aan zet.",
+      "start": 36.327,
+      "duration": 1.695
+    },
+    {
+      "id": 16,
+      "section": "oproep",
+      "text": "Welke tool, welk dashboard, welke automatisering bouw jij?",
+      "start": 38.371,
+      "duration": 3.785
+    },
+    {
+      "id": 17,
+      "section": "oproep",
+      "text": "Dien je idee in.",
+      "start": 42.701,
+      "duration": 1.196
+    },
+    {
+      "id": 18,
+      "section": "oproep",
+      "text": "Op 13 augustus bouwen we het. Samen.",
+      "start": 44.361,
+      "duration": 3.1
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "kplusv-intro-render",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Render-pijplijn voor de KplusV AI Summer Session intro-video (Puppeteer + ffmpeg).",
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^23.0.0"
+  }
+}
