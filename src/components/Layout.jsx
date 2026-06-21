@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 
 const navClass = ({ isActive }) =>
   [
@@ -9,6 +9,7 @@ const navClass = ({ isActive }) =>
   ].join(' ')
 
 export default function Layout({ children }) {
+  const isHome = useLocation().pathname === '/'
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -40,7 +41,8 @@ export default function Layout({ children }) {
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-8">{children}</main>
 
       <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 px-4 pt-5 text-sm text-slate-500 sm:flex-row">
+        <div className="mx-auto max-w-5xl px-4 py-5">
+          <div className="flex flex-col items-center justify-between gap-2 text-sm text-slate-500 sm:flex-row">
           <span>KplusV - AI sessie</span>
           <span className="flex gap-1">
             <span
@@ -60,10 +62,13 @@ export default function Layout({ children }) {
               style={{ background: '#B0A9CE' }}
             />
           </span>
+          </div>
+          {isHome && (
+            <p className="mt-3 text-center text-xs text-slate-400 sm:text-left">
+              Muziek: “Inspired” — Kevin MacLeod (incompetech.com), CC BY 4.0
+            </p>
+          )}
         </div>
-        <p className="mx-auto max-w-5xl px-4 pb-5 pt-1 text-center text-xs text-slate-400 sm:text-left">
-          Muziek: “Inspired” — Kevin MacLeod (incompetech.com), CC BY 4.0
-        </p>
       </footer>
     </div>
   )
