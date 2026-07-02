@@ -65,7 +65,7 @@ export default function Layout({ children }) {
           </div>
           {isHome && (
             <p className="mt-3 text-center text-xs text-slate-400 sm:text-left">
-              Muziek: “Inspired” — Kevin MacLeod (incompetech.com), CC BY 4.0
+              Muziek: “Inspired” van Kevin MacLeod (incompetech.com), CC BY 4.0
             </p>
           )}
         </div>

@@ -19,14 +19,14 @@ const examples = [
     icon: '📊',
     color: '#8E61A2',
     title: 'Automatische marktanalyse voor start-ups',
-    text: 'Vul een korte vragenlijst in over een start-up. De tool doorzoekt publieke bronnen, analyseert het concurrentielandschap en levert een gestructureerde DD-rapportage — inclusief kansen, risico’s en marktpositie.',
+    text: 'Vul een korte vragenlijst in over een start-up. De tool doorzoekt publieke bronnen, analyseert het concurrentielandschap en levert een gestructureerde DD-rapportage, inclusief kansen, risico’s en marktpositie.',
   },
   {
     cat: 'Vergaderen',
     icon: '💬',
     color: '#545DA4',
     title: 'Samenvatting en actiepunten na elk Teams-gesprek',
-    text: 'Na elke Teams-vergadering verschijnt automatisch een samenvatting met actiepunten in de meeting-chat. Geen handmatige notulen meer — de beslissingen en to-do’s staan er direct in, voor alle deelnemers.',
+    text: 'Na elke Teams-vergadering verschijnt automatisch een samenvatting met actiepunten in de meeting-chat. Geen handmatige notulen meer. De beslissingen en to-do’s staan er direct in, voor alle deelnemers.',
   },
   {
     cat: 'Tijdregistratie',
@@ -109,7 +109,7 @@ export default function Home() {
 
       {!isSupabaseConfigured && (
         <div className="mb-6 rounded-xl border border-kplus-blue/30 bg-kplus-blue/5 px-4 py-3 text-sm text-kplus-ink">
-          🧪 <strong>Lokale testmodus</strong> — inzendingen en stemmen worden
+          🧪 <strong>Lokale testmodus</strong>: inzendingen en stemmen worden
           opgeslagen in een SQLite-database in je eigen browser. Vul later{' '}
           <code>.env</code> in (zie <code>.env.example</code>) om over te
           schakelen naar Supabase.
