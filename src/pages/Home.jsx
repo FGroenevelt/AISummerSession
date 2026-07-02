@@ -19,7 +19,7 @@ const examples = [
     icon: '📊',
     color: '#8E61A2',
     title: 'Automatische marktanalyse voor start-ups',
-    text: 'Vul een korte vragenlijst in over een start-up. De tool doorzoekt publieke bronnen, analyseert het concurrentielandschap en levert een gestructureerde DD-rapportage, inclusief kansen, risico’s en marktpositie.',
+    text: 'Vul een korte vragenlijst in over een start-up. De tool doorzoekt publieke bronnen, analyseert het concurrentielandschap en levert een gestructureerde aanzet voor een DD-rapportage, inclusief kansen, risico’s en marktpositie.',
   },
   {
     cat: 'Vergaderen',
