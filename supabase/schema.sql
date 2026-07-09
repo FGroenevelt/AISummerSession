@@ -19,6 +19,8 @@ create table if not exists ideas (
   title text not null,
   problem text not null,
   solution text not null,
+  ai_challenges text, -- optioneel: waar loopt de indiener tegenaan bij AI-gebruik?
+  session_goal text, -- optioneel: wanneer is de indiener tevreden over de sessie?
   created_at timestamptz not null default now()
 );
 

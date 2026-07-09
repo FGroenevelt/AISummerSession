@@ -3,7 +3,15 @@ import { useNavigate } from 'react-router-dom'
 import { submitIdea } from '../lib/api'
 import { isSupabaseConfigured } from '../lib/supabase'
 
-const empty = { name: '', email: '', title: '', problem: '', solution: '' }
+const empty = {
+  name: '',
+  email: '',
+  title: '',
+  problem: '',
+  solution: '',
+  aiChallenges: '',
+  sessionGoal: '',
+}
 
 // Voorbeeldideeën als inspiratie (uitklapbaar boven het formulier).
 const examples = [
@@ -224,6 +232,26 @@ export default function Home() {
             value={form.solution}
             onChange={update('solution')}
             placeholder="Tool, dashboard, automatisering… beschrijf je gewenste oplossing."
+          />
+        </Field>
+
+        <div className="border-t border-slate-200 pt-5">
+          <Field label="Loop je tegen specifieke problemen aan in het gebruik van AI?">
+            <textarea
+              className="input min-h-[80px]"
+              value={form.aiChallenges}
+              onChange={update('aiChallenges')}
+              placeholder="Optioneel — waar loop je nu tegenaan?"
+            />
+          </Field>
+        </div>
+
+        <Field label="Wanneer ben je tevreden over de Summer Session? Wat hoop je te leren?">
+          <textarea
+            className="input min-h-[80px]"
+            value={form.sessionGoal}
+            onChange={update('sessionGoal')}
+            placeholder="Optioneel — wat zou voor jou een geslaagde sessie maken?"
           />
         </Field>
 

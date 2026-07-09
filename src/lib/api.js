@@ -10,7 +10,7 @@ const useLocal = !isSupabaseConfigured
 export async function submitIdea(input) {
   if (useLocal) return local.submitIdea(input)
 
-  const { name, email, title, problem, solution } = input
+  const { name, email, title, problem, solution, aiChallenges, sessionGoal } = input
   const { data: participant, error: pErr } = await supabase
     .from('participants')
     .insert({ name: name.trim(), email: email.trim() })
@@ -25,6 +25,8 @@ export async function submitIdea(input) {
       title: title.trim(),
       problem: problem.trim(),
       solution: solution.trim(),
+      ai_challenges: aiChallenges?.trim() || null,
+      session_goal: sessionGoal?.trim() || null,
     })
     .select('id, title')
     .single()
@@ -40,7 +42,9 @@ export async function fetchIdeas() {
 
   const { data: ideas, error: iErr } = await supabase
     .from('ideas')
-    .select('id, title, problem, solution, created_at, participants(name)')
+    .select(
+      'id, title, problem, solution, ai_challenges, session_goal, created_at, participants(name)'
+    )
   if (iErr) throw iErr
 
   const { data: votes, error: vErr } = await supabase
@@ -56,6 +60,8 @@ export async function fetchIdeas() {
     title: i.title,
     problem: i.problem,
     solution: i.solution,
+    aiChallenges: i.ai_challenges,
+    sessionGoal: i.session_goal,
     created_at: i.created_at,
     name: i.participants?.name ?? 'Onbekend',
     votes: counts.get(i.id) ?? 0,

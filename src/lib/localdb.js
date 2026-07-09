@@ -25,6 +25,8 @@ const SCHEMA = `
     title text not null,
     problem text not null,
     solution text not null,
+    ai_challenges text,
+    session_goal text,
     created_at text not null default (datetime('now'))
   );
   create table if not exists votes (
@@ -81,7 +83,15 @@ function rows(db, sql, params = []) {
   return out
 }
 
-export async function submitIdea({ name, email, title, problem, solution }) {
+export async function submitIdea({
+  name,
+  email,
+  title,
+  problem,
+  solution,
+  aiChallenges,
+  sessionGoal,
+}) {
   const db = await getDb()
   const participantId = uuid()
   const ideaId = uuid()
@@ -91,8 +101,17 @@ export async function submitIdea({ name, email, title, problem, solution }) {
     email.trim(),
   ])
   db.run(
-    'insert into ideas (id, participant_id, title, problem, solution) values (?, ?, ?, ?, ?)',
-    [ideaId, participantId, title.trim(), problem.trim(), solution.trim()]
+    `insert into ideas (id, participant_id, title, problem, solution, ai_challenges, session_goal)
+     values (?, ?, ?, ?, ?, ?, ?)`,
+    [
+      ideaId,
+      participantId,
+      title.trim(),
+      problem.trim(),
+      solution.trim(),
+      aiChallenges?.trim() || null,
+      sessionGoal?.trim() || null,
+    ]
   )
   persist(db)
   return { id: ideaId, title: title.trim() }
@@ -102,7 +121,8 @@ export async function fetchIdeas() {
   const db = await getDb()
   return rows(
     db,
-    `select i.id, i.title, i.problem, i.solution, i.created_at,
+    `select i.id, i.title, i.problem, i.solution,
+            i.ai_challenges as aiChallenges, i.session_goal as sessionGoal, i.created_at,
             p.name as name,
             (select count(*) from votes v where v.idea_id = i.id) as votes
      from ideas i
